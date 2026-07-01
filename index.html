@@ -1,1 +1,366 @@
-<h1>Fantasy Bakery</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantasy Bakery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7f0;
+      color: #4a2f35;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff0f6;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #f4d5df;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #b85c7a;
+    }
+
+    nav a {
+      color: #4a2f35;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #b85c7a;
+    }
+
+    .hero {
+      min-height: 85vh;
+      padding: 60px 8%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: linear-gradient(135deg, #fff7f0, #f4e8ff);
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #9c4f6f;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #d96c93;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(217, 108, 147, 0.3);
+    }
+
+    .button:hover {
+      background: #b85c7a;
+    }
+
+    .hero-image {
+      flex: 1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 40, 70, 0.2);
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 20px;
+      color: #9c4f6f;
+    }
+
+    .section-text {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+      font-size: 18px;
+    }
+
+    .about {
+      background: #ffffff;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(80, 40, 70, 0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card-content h3 {
+      font-size: 24px;
+      color: #b85c7a;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      background: #f8ecff;
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .feature {
+      background: white;
+      padding: 25px;
+      border-radius: 22px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(80, 40, 70, 0.08);
+    }
+
+    .contacts {
+      background: #fff0f6;
+      text-align: center;
+    }
+
+    .contact-buttons {
+      margin-top: 25px;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 24px;
+      background: white;
+      color: #b85c7a;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      border: 2px solid #f0c7d5;
+    }
+
+    .contact-buttons a:hover {
+      background: #d96c93;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #4a2f35;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 8px;
+        display: inline-block;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .features-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero-text h1 {
+        font-size: 34px;
+      }
+
+      .hero-text p {
+        font-size: 17px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .features-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Fantasy Bakery</div>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#sweets">Сладости</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Волшебная пекарня сладких чудес</h1>
+        <p>
+          Fantasy Bakery — это уютное место, где каждый десерт похож на маленькую сказку.
+          У нас можно найти торты, печенье и капкейки с волшебным настроением.
+        </p>
+        <a class="button" href="#sweets">Посмотреть сладости</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="hero.jpg" alt="Волшебная пекарня Fantasy Bakery">
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">О нашей пекарне</h2>
+      <p class="section-text">
+        Мы придумали Fantasy Bakery как место для тех, кто любит красивые десерты,
+        уютную атмосферу и немного магии. Здесь каждая сладость создаёт настроение:
+        от нежного торта до хрустящего печенья с предсказанием.
+      </p>
+    </section>
+
+    <section id="sweets">
+      <h2 class="section-title">Наши сладости</h2>
+      <p class="section-text">
+        Выбери свой сказочный десерт и почувствуй вкус волшебства.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <img src="product1.jpg" alt="Волшебный торт">
+          <div class="card-content">
+            <h3>Волшебный торт</h3>
+            <p>
+              Нежный многоярусный торт с ягодами, кремом и золотыми звёздочками.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="product2.jpg" alt="Печенье с предсказаниями">
+          <div class="card-content">
+            <h3>Печенье с предсказаниями</h3>
+            <p>
+              Хрустящее печенье с маленьким добрым предсказанием внутри.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="product3.jpg" alt="Радужные капкейки">
+          <div class="card-content">
+            <h3>Радужные капкейки</h3>
+            <p>
+              Яркие капкейки с пастельным кремом, ягодами и сладкими искрами.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 class="section-title">Почему нас выбирают</h2>
+
+      <div class="features-list">
+        <div class="feature">Сказочный дизайн</div>
+        <div class="feature">Свежая выпечка</div>
+        <div class="feature">Необычные вкусы</div>
+        <div class="feature">Уютная атмосфера</div>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <h2 class="section-title">Связаться с нами</h2>
+      <p class="section-text">
+        Хочешь сделать заказ или узнать больше? Напиши нам.
+      </p>
+
+      <div class="contact-buttons">
+        <a href="https://t.me/fantasybakery" target="_blank">Telegram</a>
+        <a href="https://vk.com/fantasybakery" target="_blank">VK</a>
+        <a href="mailto:hello@fantasybakery.ru">Email</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Fantasy Bakery. Волшебная пекарня для сладкого настроения.</p>
+  </footer>
+
+</body>
+</html>
